@@ -2,7 +2,7 @@ import { Image, Text, View } from "react-native";
 import { Button } from "react-native-paper";
 import { styles } from "../utils/styles";
 
-export default function HomeScreen({ navigation}) {
+export default function HomeScreen({ navigation }) {
   return (
     <View styles={styles.container}>
       <Image
@@ -12,11 +12,9 @@ export default function HomeScreen({ navigation}) {
         style={styles.logo300}
       />
       <Text style={styles.textoEstiloso}>Hello Elo</Text>
-      <Button 
-        mode="outlined"
-        onPress={()=>navigation.navigate("About")}>
-        Ir para 
-        </Button>
+      <Button mode="outlined" onPress={() => navigation.navigate("About")}>
+        Ir para
+      </Button>
       <Aviso />
     </View>
   );
