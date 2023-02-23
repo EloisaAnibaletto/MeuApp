@@ -1,33 +1,22 @@
 import { Image, Text, View } from "react-native";
+import { Button } from "react-native-paper";
+import { styles } from "../utils/styles";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation}) {
   return (
-    <View
-      style={{
-        flex: 1,
-        padding: "20px",
-        backgroundColor: "#FFF",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <View styles={styles.container}>
       <Image
         source={{
           uri: "https://picsum.photos/300/300",
         }}
-        style={{
-          width: "300px",
-          height: "300px",
-        }}
+        style={styles.logo300}
       />
-      <Text
-        style={{
-          color: "tomato",
-          fontSize: "34px",
-        }}
-      >
-        Hello Elo
-      </Text>
+      <Text style={styles.textoEstiloso}>Hello Elo</Text>
+      <Button 
+        mode="outlined"
+        onPress={()=>navigation.navigate("About")}>
+        Ir para 
+        </Button>
       <Aviso />
     </View>
   );
