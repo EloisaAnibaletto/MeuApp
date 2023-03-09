@@ -1,7 +1,10 @@
+
 import RootNavigation from "./src";
 
 export default function App() {
   return (
-    <RootNavigation />
+    <PaperProvider>
+      <RootNavigation />
+    </PaperProvider>
   )
 }
