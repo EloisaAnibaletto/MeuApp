@@ -6,26 +6,24 @@ export default function HomeScreen() {
     <View style={styles.container}>
       <View
         style={{
-          flexBasis: "80%",
+          flexBasis: "60%",
         }}
       >
         <Image
-          source={{
-            uri: "https://picsum.photos/300/300",
-          }}
+          source={require("../../assets/coracao.png")}
           style={{
-            minWidth: "300px",
-            height: "300px",
+            minWidth: "400px",
+            height: "400px",
           }}
         />
       </View>
       <Text
         style={{
-          color: "tomato",
-          fontSize: "34px",
+          color: "black",
+          fontSize: "40px",
         }}
       >
-        Hola, bem vindo ao meu app
+        JOIN❤️ILLE DOA!
       </Text>
       <Aviso />
     </View>
@@ -35,8 +33,8 @@ export default function HomeScreen() {
 // é um componente em React Native
 function Aviso() {
   return (
-    <View style={{ backgroundColor: "yellow" }}>
-      <Text>Oi eu sou um aviso!</Text>
+    <View style={{ backgroundColor: "grey" }}>
+      <Text>Olá, seja muito bem vindo ao nosso canal de doações!</Text>
     </View>
   );
 }
