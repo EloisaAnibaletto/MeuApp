@@ -1,4 +1,4 @@
-
+import { Provider as PaperProvider } from "react-native-paper";
 import RootNavigation from "./src";
 
 export default function App() {
@@ -6,5 +6,5 @@ export default function App() {
     <PaperProvider>
       <RootNavigation />
     </PaperProvider>
-  )
+  );
 }

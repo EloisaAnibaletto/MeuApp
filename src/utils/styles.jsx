@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+/*import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
@@ -19,4 +19,15 @@ export const styles = StyleSheet.create({
     color: "tomato",
     fontSize: "34px",
   },
+});*/
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 });
+
+export default styles;
