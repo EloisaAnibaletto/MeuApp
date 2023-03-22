@@ -3,6 +3,7 @@ import { useState } from "react";
 import { View } from "react-native";
 import { Button, HelperText, Paragraph, TextInput } from "react-native-paper";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { Image } from "react-native-web";
 import { auth } from "../config/firebase";
 
 import styles from "../utils/styles";
@@ -43,6 +44,14 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require("../../assets/inicio1.png")}
+        style={{
+          minWidth: "100px",
+          height: "60px",
+          marginBottom: 50,
+        }}
+      />
       <Paragraph>Faça o seu Login</Paragraph>
       <HelperText type="error"> {error} </HelperText>
       <View>
@@ -56,7 +65,6 @@ export default function LoginScreen({ navigation }) {
       </View>
       <View>
         <Paragraph>Senha</Paragraph>
-
         <TextInput
           mode="flat"
           placeholder="Digite sua Senha"

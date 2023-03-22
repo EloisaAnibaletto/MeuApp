@@ -23,7 +23,7 @@ export default function HomeScreen() {
           fontSize: "40px",
         }}
       >
-        JOIN❤️ILLE DOA!
+        JOINVILLE D❤️A!
       </Text>
       <Aviso />
     </View>
