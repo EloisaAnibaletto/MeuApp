@@ -32,25 +32,10 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontSize: 30,
-    position: "fixed",
-    top: "0",
-    margin: "10px",
   },
   logo300: {
     width: "300px",
     height: "300px",
-  },
-  socialIcons: {
-    display: "flex",
-    flexDirection: "row",
-    gap: "10px",
-    position: "fixed",
-    bottom: "0",
-    margin: "10px",
-  },
-  textoEstiloso: {
-    textAlign: "center",
-    margin: "10px",
   },
 });
 
