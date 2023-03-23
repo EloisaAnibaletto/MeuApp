@@ -91,11 +91,11 @@ export function MBTNavigation() {
         }}
         />
       <MTB.Screen
-        name="ReflexãoScreen"
+        name="TCSReflexao"
         component={TCSReflexao}
         options={{
-          title: "Sites de doação",
-          tabBarIcon: "phone-in-talk",
+          title: "Sites",
+          tabBarIcon: "web",
         }}
       />
       <MTB.Screen
