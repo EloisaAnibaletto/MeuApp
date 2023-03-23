@@ -60,6 +60,33 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  HelpIcons: {
+    color: "blue",
+    display: "flex",
+    flexDirection: "row",
+    gap: "10px",
+    position: "fixed",
+    bottom: "0",
+    margin: "10px", 
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "1rem",
+  },
+  sitesEmbeded: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
+    margin: "10px",
+    alignItems: "center",
+  },
+  textoEstiloso: {
+    textAlign: "center",
+    margin: "10px",
+  },
+  textSites: {
+    fontSize: "1rem",
+    color: "blue",
+  }
 });
 
 export default styles;
