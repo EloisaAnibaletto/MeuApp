@@ -23,6 +23,7 @@ export default function AboutScreen() {
           TSC, clicque no icone abaixo e veja ele completo.
         </Text>
         <a href="https://docs.google.com/document/d/1oxqESeQ1s7XORpm9hpDJ3cxWG5kROmuZGy-kpzLS27U/edit?usp=sharing">
+          <br />
           <DocumentScannerOutlinedIcon />
         </a>
         <View style={styles.socialIcons}>
