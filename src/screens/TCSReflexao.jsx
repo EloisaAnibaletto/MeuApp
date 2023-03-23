@@ -17,7 +17,7 @@ export default function TCSReflexao() {
             textAlign: "center",
           }}
         >
-          Site de doações
+          Sites
         </Text>
         <View style={styles.sitesEmbeded}>
           <Text style={styles.textSites}>
