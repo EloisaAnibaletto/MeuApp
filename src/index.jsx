@@ -8,6 +8,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import SignOut from "./screens/SignOut";
 import { SplashScreen } from "./screens/SplashScreen";
+import TCSReflexao from "./screens/TCSReflexao";
 
 const Stack = createNativeStackNavigator();
 
@@ -35,6 +36,14 @@ export default function RootNavigation() {
           options={{
             title: "Registre-se",
             // headerShown: false,
+          }}
+          />
+        <Stack.Screen
+          name="TCSReflexao"
+          component={TCSReflexao}
+          options={{
+            title: "Nav pricipal",
+            headerShown: false,
           }}
         />
         <Stack.Screen
@@ -77,6 +86,14 @@ export function MBTNavigation() {
         component={ContactScreen}
         options={{
           title: "Contato",
+          tabBarIcon: "phone-in-talk",
+        }}
+        />
+      <MTB.Screen
+        name="ReflexãoScreen"
+        component={TCSReflexao}
+        options={{
+          title: "Sites de doação",
           tabBarIcon: "phone-in-talk",
         }}
       />
