@@ -7,6 +7,7 @@ import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import SignOut from "./screens/SignOut";
+import SaibamaisScreen from "./screens/Saibamais";
 import { SplashScreen } from "./screens/SplashScreen";
 import TCSReflexao from "./screens/TCSReflexao";
 
@@ -95,6 +96,14 @@ export function MBTNavigation() {
         options={{
           title: "Sites de doação",
           tabBarIcon: "phone-in-talk",
+        }}
+      />
+      <MTB.Screen
+        name="SaibamaisScreen"
+        component={SaibamaisScreen}
+        options={{
+          title: "Saiba Mais",
+          tabBarIcon: "book-open-page-variant",
         }}
       />
       <MTB.Screen
