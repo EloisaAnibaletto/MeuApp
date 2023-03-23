@@ -31,10 +31,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   titulo: {
-    fontSize: 30,
+    fontSize: 34,
     position: "fixed",
     top: "0",
     margin: "10px",
+    color: "red",
   },
   logo300: {
     width: "300px",
@@ -44,13 +45,20 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     gap: "10px",
-    position: "fixed",
+    position: "absolute",
     bottom: "0",
     margin: "10px",
   },
   textoEstiloso: {
+    color: "darkgrey",
+    fontSize: "16px",
     textAlign: "center",
-    margin: "10px",
+    padding: "50px",
+  },
+  scrollViewContent: {
+    flexGrow: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
 
