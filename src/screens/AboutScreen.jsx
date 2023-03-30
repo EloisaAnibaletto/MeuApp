@@ -21,7 +21,7 @@ export default function AboutScreen() {
         <Text
           style={{
             color: "darkgrey",
-            fontSize: "18px",
+            fontSize: "14px",
             textAlign: "justify",
             padding: "50px",
           }}

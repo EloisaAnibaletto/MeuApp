@@ -7,6 +7,7 @@ import { auth } from "../config/firebase";
 
 import styles from "../utils/styles";
 export default function RegisterScreen() {
+  const {nome, setNome} = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
