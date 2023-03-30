@@ -10,6 +10,8 @@ import SignOut from "./screens/SignOut";
 import SaibamaisScreen from "./screens/Saibamais";
 import { SplashScreen } from "./screens/SplashScreen";
 import TCSReflexao from "./screens/TCSReflexao";
+import TaskAdd from "./screens/TaskAdd";
+import TaskList from "./screens/TaskList";
 
 const Stack = createNativeStackNavigator();
 
@@ -107,11 +109,27 @@ export function MBTNavigation() {
         }}
       />
       <MTB.Screen
+        name="AddTask"
+        component={TaskAdd}
+        options={{
+          title: "Add Task",
+          tabBarIcon: "plus",
+        }}
+      />
+      <MTB.Screen
         name="LogoutScreen"
         component={SignOut}
         options={{
           title: "Sair",
           tabBarIcon: "exit-to-app",
+        }}
+      />
+      <MTB.Screen
+        name="TasksList"
+        component={TaskList}
+        options={{
+          title: "Lista Tarefas",
+          tabBarIcon: "format-list-bulleted",
         }}
       />
     </MTB.Navigator>

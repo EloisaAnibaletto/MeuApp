@@ -51,8 +51,8 @@ const styles = StyleSheet.create({
   },
   textoEstiloso: {
     color: "darkgrey",
-    fontSize: "16px",
-    textAlign: "center",
+    fontSize: "18px",
+    textAlign: "justify",
     padding: "50px",
   },
   scrollViewContent: {
