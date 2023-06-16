@@ -1,46 +1,66 @@
-import { Text } from "react-native-paper";
-import { View } from "react-native";
-import { collection, getFirestore, onSnapshot, query } from "firebase/firestore";
-import { app } from "../config/firebase";
-import { useEffect } from "react";
+import { FlatList, ScrollView, View } from "react-native";
+import { db } from "../config/firebase";
+import { useEffect, useState } from "react";
+import { collection, deleteDoc, doc, onSnapshot, query } from "firebase/firestore";
+import { List, Text, TouchableRipple } from "react-native-paper";
 
-const tarefas = collection(
-    getFirestore(app), 
-    "tarefas");
+export default function AulaTaskListar() {
+    const [tarefas, setTarefas] = useState([]);
 
-export default function TaskList() {
+    const tarefasRef = collection(db, "tarefas")
 
-    const [tasks, setTasks] = useState([]);
+    useEffect(() => {
 
-        useEffect(() => {
-            const queryInstance = query(tarefas);
-            const tasksQuery = onSnapshot(
-                queryInstance, (snapshot) => {
-                    const resultado = snapshot.docs;
-                    console.log("desorganizado", snapshot.docs);
-                    const listaDeTarefas = resultado.map((doc) => {
-                        return{
+        const q = query(tarefasRef)
+        const unsubscribe = onSnapshot(
+            q, 
+            (querySnapshot) => { 
+                const listaDeTarefas = querySnapshot.docs.map(
+                    (doc) => (
+                        {
                             id: doc.id,
-                            ...doc.data(),
+                            ...doc.data()
                         }
-                    })
-                    setTasks(listaDeTarefas);
-                    console.log("organizado", listaDeTarefas);
-                }
-            )
-        tasksQuery();
-    },[])
+                    )
+                )
 
-    return(
-        <View>
-            <Text>Lista de Tarefas</Text>
+                setTarefas(listaDeTarefas)
+            }
+        )
+        return () => unsubscribe()
+    }, [])
+
+    function handleDelete(id) {
+        console.log("vou deletar mesmo>", id)
+        const docRef = doc(db, "tarefas", id)
+        deleteDoc(docRef)
+            .then(() => console.log("Documento deletado com sucesso"))
+            .catch((error) => console.log(error))
+    }
+
+    return (
+        <ScrollView>
             <FlatList
-                data={[{id:1, titulo: "Tarefa 1"}]}
-                renderItem={(item) => (
-                    <Text>{item.titulo}</Text>
+                data={tarefas}
+                renderItem={({ item }) => (
+                    <List.Item
+                        title={item.nomeDaTarefa}
+                        //description={"Descricao da tarefa acima"}
+                        onPress={() => console.log("Pressionado")}
+                        right={(props) => (
+                            <TouchableRipple
+                                onPress={() => handleDelete(item.id)}
+                            >
+                                <List.Icon
+                                    {...props}
+                                    icon="delete"
+                                    size={28}
+                                />
+                            </TouchableRipple>
+                        )}
+                    />
                 )}
-                keyExtractor={(item) => item.id}
             />
-        </View>
+        </ScrollView>
     )
 }

@@ -109,11 +109,19 @@ export function MBTNavigation() {
         }}
       />
       <MTB.Screen
-        name="AddTask"
+        name="TaskAdd"
         component={TaskAdd}
         options={{
-          title: "Add Task",
+          title: "Adicionar Doação",
           tabBarIcon: "plus",
+        }}
+      />
+      <MTB.Screen
+        name="TasksList"
+        component={TaskList}
+        options={{
+          title: "Lista Doações",
+          tabBarIcon: "format-list-bulleted",
         }}
       />
       <MTB.Screen
@@ -121,15 +129,7 @@ export function MBTNavigation() {
         component={SignOut}
         options={{
           title: "Sair",
-          tabBarIcon: "exit-to-app",
-        }}
-      />
-      <MTB.Screen
-        name="TasksList"
-        component={TaskList}
-        options={{
-          title: "Lista Tarefas",
-          tabBarIcon: "format-list-bulleted",
+          tabBarIcon: "arrow-right-circle",
         }}
       />
     </MTB.Navigator>

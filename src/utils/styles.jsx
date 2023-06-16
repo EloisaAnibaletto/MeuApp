@@ -30,6 +30,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  containerInner: {
+    flex: 1,
+    width: "100%",
+    alignSelf: "stretch",
+    paddingHorizontal: 20,
+    paddingVertical: 10
+  },
   titulo: {
     fontSize: 34,
     position: "fixed",

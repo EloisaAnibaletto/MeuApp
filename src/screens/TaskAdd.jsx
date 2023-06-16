@@ -1,55 +1,52 @@
 import { View } from "react-native-web";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { app } from "../config/firebase";
+import { db } from "../config/firebase"
 import { Text, TextInput } from "react-native-paper";
 import { useState } from "react";
-
-const tarefas = collection(getFirestore(app), "tarefas");
+import styles from "../utils/styles";
 
 export default function TaskAdd() {
 
-    const [task, setTask] = useState("");
+  //const tarefas = collection(getFirestore(app), "tarefas");
+    const [tarefa, setTarefa] = useState("");
+    const tarefasRef  = collection(db, "tarefas")
+    
+    function handleAddTask() {
+      console.log(tarefa)
+      const data = {
+          nomeDaTarefa: tarefa
+      }
 
-    function saveTask(newTask) {
-        console.log("Salvando tarefa", newTask);
-        addDoc(tarefas, {
-            titulo: newTask,
-            concluida: false,
-        })
+      addDoc(tarefasRef, data)
           .then((docRef) => {
-            console.log("Tarefa salva com sucesso ", docRef.id);
+              console.log("Tarefa Adicionar com a ID: ", docRef.id)
+              
+              setTarefa('')
           })
-          .catch((error) => { 
-          console.log("Erro ao salvar tarefa", error); 
-          })
-      }
-      
-      function handleAddTask() {
-        console.log("Adicionando tarefa");
-        if (task.trim() != "") {
-          saveTask(task);
-        }
-      }
-  
+          .catch(
+              (error) => console.log(error)
+          )
+  }
+
   return (
-    <View>
-      <Text>Adicionar Tarefa</Text>
-      <TextInput
-        label="Adicionar Tarefa"
-        mode="flat"
-        value={task}
-        onChangeText={setTask}
-        right={
-          <TextInput.Icon
-            icon="plus"
-            size={20}
-            style={{ marginRight: 10 }}
-            containerColor="lightgray"
-            iconColor={"white"}
-            onPress={handleAddTask}
+      <View
+          style={styles.containerInner}
+      >
+          <TextInput
+              label="Tarefa"
+              mode="outlined"
+              value={tarefa}
+              onChangeText={setTarefa}
+              right={
+                  <TextInput.Icon
+                      icon="plus"
+                      size={28}
+                      onPress={handleAddTask}
+                  />
+              }
+              
           />
-        }
-      />
-    </View>
-  );
+      </View>
+  )
 }
