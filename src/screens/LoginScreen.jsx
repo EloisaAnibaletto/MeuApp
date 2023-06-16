@@ -7,6 +7,7 @@ import { Image } from "react-native-web";
 import { auth } from "../config/firebase";
 
 import styles from "../utils/styles";
+import Logo from "../components/Logo";
 export default function LoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -43,18 +44,11 @@ export default function LoginScreen({ navigation }) {
   }
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={require("../../assets/inicio1.png")}
-        style={{
-          minWidth: "100px",
-          height: "60px",
-          marginBottom: 50,
-        }}
-      />
+    <View style={{ ...styles.container, alignSelf: "stretch" }}>
+      <Logo />
       <Paragraph>Faça o seu Login</Paragraph>
       <HelperText type="error"> {error} </HelperText>
-      <View>
+      <View style={{ alignSelf: "stretch" }}>
         <Paragraph>E-mail</Paragraph>
         <TextInput
           mode="outlined"
@@ -63,10 +57,10 @@ export default function LoginScreen({ navigation }) {
           onChangeText={setEmail}
         />
       </View>
-      <View>
+      <View style={{ alignSelf: "stretch" }}>
         <Paragraph>Senha</Paragraph>
         <TextInput
-          mode="flat"
+          mode="outlined"
           placeholder="Digite sua Senha"
           value={senha}
           onChangeText={setSenha}
@@ -80,13 +74,18 @@ export default function LoginScreen({ navigation }) {
         />
       </View>
 
-      <View style={{ marginTop: 20 }}>
+      <View
+        style={{
+          marginTop: 20,
+          flexDirection: "row",
+          alignSelf: "stretch",
+          justifyContent: "space-between",
+          paddingHorizontal: 20,
+        }}
+      >
         <Button mode="contained" onPress={handleRegister}>
           Acessar
         </Button>
-      </View>
-
-      <View style={{ marginTop: 20 }}>
         <Button
           mode="contained"
           onPress={() => navigation.navigate("RegisterScreen")}

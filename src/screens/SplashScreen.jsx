@@ -5,6 +5,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../config/firebase";
 import styles from "../utils/styles";
 import { useFocusEffect } from "@react-navigation/native";
+import Logo from "../components/Logo";
 
 export function SplashScreen({ navigation }) {
   useFocusEffect(() => {
@@ -20,10 +21,7 @@ export function SplashScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../../assets/coracao.png")}
-        style={{ width: 200, height: 200, borderRadius: 999 }}
-      />
+      <Logo />
       <ActivityIndicator />
       <Text>Aguarde</Text>
     </View>
