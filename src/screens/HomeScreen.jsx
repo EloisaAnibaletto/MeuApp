@@ -10,22 +10,25 @@ export default function HomeScreen() {
         }}
       >
         <Image
-          source={require("../../assets/coracao.png")}
-          style={{
-            minWidth: "400px",
-            height: "400px",
-          }}
-        />
+      source={require("../../assets/inicio1.png")}
+      style={{
+        marginTop: 80,
+        width: 250,
+        height: 250,
+      }}
+      resizeMode="contain"
+    />
+        
       </View>
       <Text
         style={{
           color: "black",
-          fontSize: "40px",
+          fontSize: "30px",
+          textAlign: "center",
         }}
       >
-        JOINVILLE D❤️A!
+        Olá, seja bem vindo ao canal mais completo de doações de Joinville!
       </Text>
-      <Aviso />
     </View>
   );
 }

@@ -9,7 +9,7 @@ import RegisterScreen from "./screens/RegisterScreen";
 import SignOut from "./screens/SignOut";
 import SaibamaisScreen from "./screens/Saibamais";
 import { SplashScreen } from "./screens/SplashScreen";
-import TCSReflexao from "./screens/TCSReflexao";
+
 import TaskAdd from "./screens/TaskAdd";
 import TaskList from "./screens/TaskList";
 
@@ -41,14 +41,6 @@ export default function RootNavigation() {
             // headerShown: false,
           }}
           />
-        <Stack.Screen
-          name="TCSReflexao"
-          component={TCSReflexao}
-          options={{
-            title: "Nav pricipal",
-            headerShown: false,
-          }}
-        />
         <Stack.Screen
           name="MTBNavigation"
           component={MBTNavigation}
@@ -92,14 +84,6 @@ export function MBTNavigation() {
           tabBarIcon: "phone-in-talk",
         }}
         />
-      <MTB.Screen
-        name="TCSReflexao"
-        component={TCSReflexao}
-        options={{
-          title: "Sites",
-          tabBarIcon: "web",
-        }}
-      />
       <MTB.Screen
         name="SaibamaisScreen"
         component={SaibamaisScreen}

@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     gap: "10px",
     position: "absolute",
     bottom: "0",
-    margin: "10px",
+    margin: "0px",
   },
   textoEstiloso: {
     color: "darkgrey",
