@@ -33,7 +33,6 @@ export default function HomeScreen() {
   );
 }
 
-// é um componente em React Native
 function Aviso() {
   return (
     <View style={{ backgroundColor: "grey" }}>
