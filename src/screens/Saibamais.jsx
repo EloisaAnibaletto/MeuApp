@@ -25,7 +25,7 @@ export default function SaibamaisScreen() {
             color: "darkgrey",
             fontSize: "16px",
             textAlign: "justify",
-            padding: "10px",
+            padding: "50px",
           }}
         >
           <Text style={{ display: "flex" }}>
