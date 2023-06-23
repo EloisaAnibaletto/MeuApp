@@ -2,7 +2,6 @@ import { createMaterialBottomTabNavigator } from "@react-navigation/material-bot
 import { NavigationContainer, useTheme } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AboutScreen from "./screens/AboutScreen";
-import ContactScreen from "./screens/ContactScreen";
 import HomeScreen from "./screens/HomeScreen";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
@@ -63,7 +62,7 @@ export function MBTNavigation() {
         name="HomeScreen"
         component={HomeScreen}
         options={{
-          tabBarIcon: "android",
+          tabBarIcon: "home",
 
           title: "Inicio",
         }}
@@ -76,14 +75,6 @@ export function MBTNavigation() {
           tabBarIcon: "help",
         }}
       />
-      <MTB.Screen
-        name="ContactScreen"
-        component={ContactScreen}
-        options={{
-          title: "Contato",
-          tabBarIcon: "phone-in-talk",
-        }}
-        />
       <MTB.Screen
         name="SaibamaisScreen"
         component={SaibamaisScreen}

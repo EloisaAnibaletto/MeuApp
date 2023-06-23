@@ -1,9 +1,11 @@
 import { Text, View } from "react-native";
+import { ScrollView } from "react-native-web";
 import styles from "../utils/styles";
 
 export default function SaibamaisScreen() {
   return (
     <View style={styles.container}>
+      <ScrollView>
       <View
         style={{
           flexBasis: "80%",
@@ -50,7 +52,24 @@ export default function SaibamaisScreen() {
             correto e benéfico entre as partes envolvidas.{" "}
           </Text>
         </Text>
+        <Text style={{
+            color: "darkgrey",
+            fontSize: "16px",
+            textAlign: "center",
+            padding: "10px",
+          }}>
+          Conheça mais a nossa equipe: <br />
+          <br />
+          <b>Eloisa Anibaletto</b> <br />Desenvolvedora Full Stack <br /><br />
+          <b>Maria Wandersee</b> <br />Desenvolvedora Full Stack <br /><br />
+          <b>Milena Muchenski</b> <br />Product Manager <br /><br />
+          <b>Patrícia Marques</b> <br />Gerente de projetos <br /><br />
+          <b>Kanamy Stewart</b><br />Desenvolvedora Full Stack <br /><br />
+          <b>Refeson Pinho</b><br />DBA <br /><br />
+          <br />
+        </Text>
       </View>
+      </ScrollView>
     </View>
   );
 }
